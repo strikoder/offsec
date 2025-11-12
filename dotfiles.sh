@@ -166,3 +166,15 @@ echo -e "    Super+1 = Switch to Workspace 1"
 echo -e "    Super+2 = Switch to Workspace 2"
 echo -e "    Ctrl+Super+1 = Move window to Workspace 1"
 echo -e "    Ctrl+Super+2 = Move window to Workspace 2"
+
+# --- Add common pentesting wordlist environment variables ---
+echo -e "\n[+] Adding pentesting wordlist environment variables..."
+cat << 'EOF' >> "$ZSHRC"
+
+# >>> pentesting wordlists >>>
+envset dirb=/usr/share/wordlists/dirb/big.txt
+envset raft_dir=/usr/share/wordlists/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
+envset dir_list=/usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+envset rockyou=/usr/share/wordlists/rockyou.txt
+# <<< pentesting wordlists <<<
+EOF
